@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>ExampleMod</AssemblyName>
+    <BepInExPluginName>Example Mod</BepInExPluginName>
+    <Description>An example mod for Pharaoh</Description>
+    <Version>1.0.0</Version>
+    <RootNamespace>ExampleMod</RootNamespace>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,47 @@
+<Project>
+	<Import Project="GamePath.props" Condition="Exists('GamePath.props')" />
+		<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <OutputPath>$(SolutionDir)bin\$(Configuration)\$(ProjectName)\</OutputPath>
+		<Configurations>Debug;Release</Configurations>
+		<TargetFramework>net472</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RestoreAdditionalProjectSources>
+			https://nuget.bepinex.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+		<LangVersion>8</LangVersion>
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	
+	<ItemDefinitionGroup>
+		<PackageReference ExcludeAssets="runtime" />
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Core" Version="5.*" />
+		<PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="*-*" />
+		<PackageReference Include="PolySharp" Version="1.13.*" />
+	</ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+    </ItemGroup>
+	
+	<!-- Game references - used by all projects -->
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(GamePath)\Pharaoh_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>$(GamePath)\Pharaoh_Data\Managed\UnityEngine.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(GamePath)\Pharaoh_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+</Project>

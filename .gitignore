@@ -1,0 +1,25 @@
+# Build output
+bin/
+obj/
+Zips_Debug/
+Zips_Release/
+
+# VS Code files
+.vs/
+.vscode/
+*.code-workspace
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+**/[Bb]in/
+**/[Oo]bj/
+
+# GamePath.props (contains user-specific paths)
+GamePath.props
+
+# Decompiled game code (copyright concerns)
+Assembly-CSharp/

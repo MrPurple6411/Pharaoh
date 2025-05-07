@@ -1,4 +1,8 @@
 <Project>
+	<Target Name="PublicizeDependencies" BeforeTargets="ResolveAssemblyReferences">
+		<Exec Command="call &quot;$(MSBuildThisFileDirectory)PublicizeDependencies.bat&quot;" ConsoleToMsBuild="true" />
+	</Target>
+	
 	<Target Name="ZipPlugins" AfterTargets="Build" Condition="$(AssemblyName.EndsWith('Tests')) == 'false' And $(AssemblyName) != 'Assembly-CSharp'">
 		<PropertyGroup>
 			<StagingDir>$(OutDir)\staging</StagingDir>

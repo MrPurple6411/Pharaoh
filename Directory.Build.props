@@ -27,19 +27,18 @@
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
     </ItemGroup>
-	
-	<!-- Game references - used by all projects -->
+		<!-- Game references - used by all projects -->
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>$(GamePath)\Pharaoh_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(SolutionDir)Dependencies\Assembly-CSharp.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="UnityEngine">
-			<HintPath>$(GamePath)\Pharaoh_Data\Managed\UnityEngine.dll</HintPath>
+			<HintPath>$(SolutionDir)Dependencies\UnityEngine.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>$(GamePath)\Pharaoh_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<HintPath>$(SolutionDir)Dependencies\UnityEngine.CoreModule.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>

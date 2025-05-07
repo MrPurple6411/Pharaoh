@@ -23,10 +23,18 @@ cd Pharaoh
 
 Or download and extract the repository as a ZIP file.
 
-### Step 3: Set Up Your Game Path
+### Step 3: Game Assembly Dependencies
 
-1. Make sure `GamePath.props` exists in the repository root
-2. Verify it contains the correct path to your game installation:
+The project now automatically:
+
+1. Locates your Pharaoh installation (default Steam path or common Steam library locations)
+2. Uses checksum verification to determine if game files have changed
+3. Only when needed, extracts and publicizes the game assemblies to the `Dependencies` folder
+4. Uses these files for building your mods
+
+If your game is installed in a non-standard location:
+
+1. Modify the `GamePath.props` in the repository root:
 
 ```xml
 <Project>

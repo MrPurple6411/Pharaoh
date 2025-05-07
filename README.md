@@ -6,7 +6,12 @@ This repository contains a setup for modding Pharaoh using BepInEx.
 
 1. Clone this repository
 2. Open the solution in Visual Studio Code or Visual Studio
-3. Create a `GamePath.props` file at the solution root with your Pharaoh installation path:
+3. The system will automatically:
+   - Locate your Pharaoh installation
+   - Extract and publicize the necessary game assemblies to the `Dependencies` folder
+   - Use these files for building your mods
+
+   If the game cannot be found automatically, you'll need to create or modify the `GamePath.props` file:
 
 ```xml
 <Project>
@@ -18,6 +23,8 @@ This repository contains a setup for modding Pharaoh using BepInEx.
 
 4. Build the solution
 5. Your mods will be created in the `Zips_Release` or `Zips_Debug` directory
+
+> **Note:** The system uses a checksum-based cache to avoid regenerating dependencies if the game files haven't changed.
 
 ## Project Structure
 

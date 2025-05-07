@@ -18,8 +18,8 @@ Zips_Release/
 **/[Bb]in/
 **/[Oo]bj/
 
-# GamePath.props (contains user-specific paths)
-GamePath.props
-
 # Decompiled game code (copyright concerns)
 Assembly-CSharp/
+
+# Dependency files
+Dependencies/

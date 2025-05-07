@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <!-- This path is used by the build process if you need direct access to game files -->
+    <!-- It is NOT required for building mods when using the Dependencies folder -->
+    <!-- Only edit this if the auto-detection in PublicizeDependencies.bat fails -->
+    <GamePath>C:\Program Files (x86)\Steam\steamapps\common\Pharaoh A New Era</GamePath>
+  </PropertyGroup>
+</Project>
